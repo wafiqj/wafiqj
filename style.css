@@ -48,6 +48,39 @@ a {
   background-color: #7cb5ce;
 }
 
+.container {
+  display: none;
+  cursor: pointer;
+  position: absolute; /* Make sure the container is positioned relative to its parent */
+  top: 15px; /* Adjust as needed */
+  right: 45px; /* Adjust as needed */
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  transform: translate(0, 8px) rotate(-45deg);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  transform: translate(0, -8px) rotate(45deg);
+}
+
 .dua {
   width: 100%;
   height: 10px;
@@ -84,7 +117,7 @@ section {
   justify-content: center;
   font-size: 30px;
   font-weight: bold;
-  background: linear-gradient(rgba(0, 0, 0, 0), #cae5f8, #cae5f8, #cae5f8, #cae5f8, rgba(0, 0, 0, 0));
+  background: linear-gradient(rgba(0, 0, 0, 0), #cae5f8, #cae5f8, #cae5f8, #cae5f8, #cae5f8, #cae5f8, rgba(0, 0, 0, 0));
   transform: translateY(-30%);
 }
 
@@ -94,8 +127,9 @@ img {
 
 .pindpk {
   position: absolute;
-  top: 445px;
-  left: 435px;
+  top: 50%; /* Menempatkan elemen di tengah vertikal gambar */
+  left: 50%; /* Menempatkan elemen di tengah horizontal gambar */
+  transform: translate(-650%, 115%); /* Menggeser elemen ke titik tengah gambar */
 }
 
 .info {
@@ -140,4 +174,54 @@ img {
   align-items: center;
   font-size: 32px;
   font-weight: bold;
+}
+
+@media only screen and (max-width: 1280px) {
+  .topground,
+  .background {
+    font-size: 50px;
+    line-height: 1.1; /* Mengurangi jarak antar baris */
+    right: 78px;
+    top: 347px;
+  }
+
+  .pindpk {
+    position: absolute;
+    top: 50%; /* Menempatkan elemen di tengah vertikal gambar */
+    left: 50%; /* Menempatkan elemen di tengah horizontal gambar */
+    transform: translate(-240%, -3%); /* Menggeser elemen ke titik tengah gambar */
+  }
+
+  .info {
+    display: none;
+    position: absolute;
+    top: 405px;
+    left: 160px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+  }
+
+  .menu {
+    display: none;
+    position: fixed;
+    top: 0px; /* Adjust as needed */
+    right: 70px; /* Adjust as needed */
+    background-color: #8acae6;
+    flex-direction: column;
+    padding: 0px;
+    z-index: 1000;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .container {
+    display: inline-block;
+    position: fixed; /* Make sure the container is fixed */
+    top: 20px; /* Adjust this value to move it up or down */
+    right: 25px; /* Adjust this value to move it left or right */
+  }
 }
