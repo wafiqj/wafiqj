@@ -142,8 +142,8 @@ img {
   font-weight: bold;
 }
 
-@media only screen and (max-width: 1280px) {
+/* @media only screen and (max-width: 1280px) {
   .responsive {
     display: flex;
   }
-}
+} */
